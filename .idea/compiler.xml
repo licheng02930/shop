@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="shopp-activemq" />
+        <module name="shopp-api-member" />
+        <module name="shopp-common" />
+        <module name="shopp-consumer" />
+        <module name="shopp-eureka" />
+        <module name="shopp-member" />
+        <module name="shopp-message" />
+        <module name="shopp-pc-web" />
+        <module name="shopp-producer" />
+        <module name="springboot-example" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="shopp-activemq" target="1.8" />
+      <module name="shopp-api" target="1.8" />
+      <module name="shopp-api-member" target="1.8" />
+      <module name="shopp-common" target="1.8" />
+      <module name="shopp-consumer" target="1.8" />
+      <module name="shopp-eureka" target="1.8" />
+      <module name="shopp-example" target="1.8" />
+      <module name="shopp-member" target="1.8" />
+      <module name="shopp-message" target="1.8" />
+      <module name="shopp-parent" target="1.8" />
+      <module name="shopp-pc-web" target="1.8" />
+      <module name="shopp-producer" target="1.8" />
+      <module name="springboot" target="1.8" />
+      <module name="springboot-example" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

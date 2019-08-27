@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/shopp-activemq/shopp-activemq.iml" filepath="$PROJECT_DIR$/shopp-activemq/shopp-activemq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopp-api/shopp-api.iml" filepath="$PROJECT_DIR$/shopp-api/shopp-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopp-api/shopp-api-member/shopp-api-member.iml" filepath="$PROJECT_DIR$/shopp-api/shopp-api-member/shopp-api-member.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopp-common/shopp-common.iml" filepath="$PROJECT_DIR$/shopp-common/shopp-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopp-consumer/shopp-consumer.iml" filepath="$PROJECT_DIR$/shopp-consumer/shopp-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopp-eureka/shopp-eureka.iml" filepath="$PROJECT_DIR$/shopp-eureka/shopp-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopp-member/shopp-member.iml" filepath="$PROJECT_DIR$/shopp-member/shopp-member.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopp-message/shopp-message.iml" filepath="$PROJECT_DIR$/shopp-message/shopp-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopp-parent.iml" filepath="$PROJECT_DIR$/shopp-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopp-pc-web/shopp-pc-web.iml" filepath="$PROJECT_DIR$/shopp-pc-web/shopp-pc-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shopp-producer/shopp-producer.iml" filepath="$PROJECT_DIR$/shopp-producer/shopp-producer.iml" />
+    </modules>
+  </component>
+</project>
