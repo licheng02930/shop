@@ -20,7 +20,7 @@ spring:
   #数据库连接信息
   datasource:
         name: test
-        url: jdbc:mysql://192.168.3.100:3306/itmayiedu-pay
+        url: jdbc:mysql://192.168.3.100:3306/shopp_member
         username: root
         password: Root123.
         # 使用druid数据源
