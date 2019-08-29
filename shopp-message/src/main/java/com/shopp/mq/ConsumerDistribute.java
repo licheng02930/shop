@@ -20,7 +20,7 @@ public class ConsumerDistribute {
     private EmailService emailService;
     private MessageAdapter messageAdapter;
 
-    // 监听消息
+    // 监听消息---不抛异常不会重试
     @JmsListener(destination = "messages_queue")
     public void distribute(String json) {
         log.info("#####消息服务平台接受消息内容:{}#####", json);

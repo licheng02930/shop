@@ -172,10 +172,23 @@ public class MemberServiceImpl extends BaseApiService implements MemberService {
         UserEntity userEntity = (UserEntity) userToken.getData();
         // 5.修改用户openid
         Integer userId = userEntity.getId();
-        Integer updateByOpenIdUser = memberDao.updateByOpenIdUser(openid, userId);
+        Integer updateByOpenIdUser = memberDao.updateOpenIdById(openid, userId);
         if (updateByOpenIdUser <= 0) {
             return setResultError("QQ账号管理失败!");
         }
         return setLogin;
     }
+
+    @Override
+    public ResponseBase setRedisTest(String key, String value) {
+        baseRedisService.setString(key, value, null);
+        return setResultSuccess();
+    }
+
+    @Override
+    public ResponseBase getRedis(String key) {
+        String value = (String) baseRedisService.getString(key);
+        return setResultSuccess(value);
+    }
+
 }

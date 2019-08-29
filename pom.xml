@@ -17,6 +17,8 @@
         <module>shopp-producer</module>
         <module>shopp-message</module>
         <module>shopp-pc-web</module>
+        <module>shopp-pay</module>
+        <module>shopp-order</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -95,7 +97,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.0.14</version>
+            <version>1.1.12</version>
         </dependency>
         <!-- httpclient -->
         <dependency>

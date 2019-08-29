@@ -20,5 +20,5 @@ public interface MemberDao {
     UserEntity findByOpenIdUser(@Param("openid") String openid);
 
     @Update("update mb_user set openid=#{openid} where id=#{userId}")
-    Integer updateByOpenIdUser(@Param("openid") String openid,@Param("userId") Integer userId);
+    Integer updateOpenIdById(@Param("openid") String openid,@Param("userId") Integer userId);
 }

@@ -16,6 +16,9 @@ public interface MemberService {
     @RequestMapping("/findUserById")
     ResponseBase findUserById(Long userId);
 
+    /**
+     *  注册
+     */
     @RequestMapping("/regUser")
     ResponseBase regUser(@RequestBody UserEntity user);
 
@@ -26,4 +29,12 @@ public interface MemberService {
     ResponseBase findByOpenIdUser(@RequestParam("openid") String openid);
 
     ResponseBase qqLogin(@RequestBody UserEntity user);
+
+
+    @RequestMapping("/setRedisTest")
+    public ResponseBase setRedisTest(String key, String value);
+
+    @RequestMapping("/getRedis")
+    public ResponseBase getRedis(String key);
+
 }

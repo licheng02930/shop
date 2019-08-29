@@ -20,7 +20,7 @@ public class IndexController {
     @Autowired
     private MemberServiceFegin memberServiceFegin;
 
-    // 主页
+    // 主页--查询用户信息
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(HttpServletRequest reqest) {
         // 1.从cookie中获取 token信息
