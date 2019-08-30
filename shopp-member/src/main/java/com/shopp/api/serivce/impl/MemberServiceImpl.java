@@ -180,13 +180,13 @@ public class MemberServiceImpl extends BaseApiService implements MemberService {
     }
 
     @Override
-    public ResponseBase setRedisTest(String key, String value) {
+    public ResponseBase setRedisTest(@RequestParam("key") String key,@RequestParam("value") String value) {
         baseRedisService.setString(key, value, null);
         return setResultSuccess();
     }
 
     @Override
-    public ResponseBase getRedis(String key) {
+    public ResponseBase getRedis(@RequestParam("key") String key) {
         String value = (String) baseRedisService.getString(key);
         return setResultSuccess(value);
     }

@@ -36,11 +36,11 @@ public class CallBackController {
     @RequestMapping("/returnUrl")
     public void synCallBack(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html;charset=utf-8");
-        Map<String, String> params = new HashMap<String, String>();
+        Map<String, String> params = new HashMap<>();
         Map<String, String[]> requestParams = request.getParameterMap();
         for (Iterator<String> iter = requestParams.keySet().iterator(); iter.hasNext(); ) {
-            String name = (String) iter.next();
-            String[] values = (String[]) requestParams.get(name);
+            String name = iter.next();
+            String[] values = requestParams.get(name);
             String valueStr = "";
             for (int i = 0; i < values.length; i++) {
                 valueStr = (i == values.length - 1) ? valueStr + values[i] : valueStr + values[i] + ",";
@@ -64,7 +64,7 @@ public class CallBackController {
         String totalAmount = (String) data.get("totalAmount");
 
         log.info("###支付宝同步回调CallBackController####synCallBack結束 params:{}", params);
-        // 封装成html 浏览器模拟去提交
+        // 封装成html 浏览器模拟去提交---目的隐藏地址栏参数（改post提交）
         String htmlFrom = "<form name='punchout_form' "
                 + "method='post' "
                 + "action='http://127.0.0.1/alibaba/callBack/synSuccessPage' >"
@@ -89,8 +89,23 @@ public class CallBackController {
     // 异步通知
     @RequestMapping("/notifyUrl")
     @ResponseBody
-    public String asynCallBack(@RequestParam Map<String, String> params) {
-        return "success";
+    public String asynCallBack(HttpServletRequest request, HttpServletResponse response) {
+        Map<String, String> params = new HashMap<>();
+        Map<String, String[]> requestParams = request.getParameterMap();
+        for (Iterator<String> iter = requestParams.keySet().iterator(); iter.hasNext(); ) {
+            String name = iter.next();
+            String[] values = requestParams.get(name);
+            String valueStr = "";
+            for (int i = 0; i < values.length; i++) {
+                valueStr = (i == values.length - 1) ? valueStr + values[i] : valueStr + values[i] + ",";
+            }
+            // 乱码解决，这段代码在出现乱码时使用
+//          valueStr = new String(valueStr.getBytes("ISO-8859-1"), "utf-8");
+            params.put(name, valueStr);
+        }
+        log.info("###支付宝异步回调CallBackController####synCallBack开始 params:{}", params);
+        String result = callBackServiceFegin.asynCallBack(params);
+        return result;
 
     }
 

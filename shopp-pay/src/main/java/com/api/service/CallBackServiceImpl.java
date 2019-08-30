@@ -90,6 +90,10 @@ public class CallBackServiceImpl extends BaseApiService implements CallBackServi
 
             // 支付宝交易号
             String tradeNo = params.get("trade_no");
+            // 付款金额
+            String totalAmount = params.get("total_amount");
+            // 可以查出商品实际价格与totalAmount（实际付款金额）比较，价格不一致标记为支付异常订单
+
             orderIdPayInfo.setState(1);
             orderIdPayInfo.setPlatformorderId(tradeNo);
             orderIdPayInfo.setPayMessage(params.toString());

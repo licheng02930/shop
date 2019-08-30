@@ -22,19 +22,23 @@ public interface MemberService {
     @RequestMapping("/regUser")
     ResponseBase regUser(@RequestBody UserEntity user);
 
+    @RequestMapping("/login")
     ResponseBase login(@RequestBody UserEntity user);
 
+    @RequestMapping("/findByTokenUser")
     ResponseBase findByTokenUser(@RequestParam("token") String token);
 
+    @RequestMapping("/findByOpenIdUser")
     ResponseBase findByOpenIdUser(@RequestParam("openid") String openid);
 
+    @RequestMapping("/qqLogin")
     ResponseBase qqLogin(@RequestBody UserEntity user);
 
 
     @RequestMapping("/setRedisTest")
-    public ResponseBase setRedisTest(String key, String value);
+    ResponseBase setRedisTest(@RequestParam("key") String key,@RequestParam("value") String value);
 
     @RequestMapping("/getRedis")
-    public ResponseBase getRedis(String key);
+    ResponseBase getRedis(@RequestParam("key") String key);
 
 }

@@ -26,7 +26,7 @@ public class PayServiceImpl extends BaseApiService implements PayService {
     private PaymentInfoDao paymentInfoDao;
 
     // 创建支付令牌
-    @RequestMapping("/createPayToken")
+    @Override
     public ResponseBase createToken(@RequestBody PaymentInfo paymentInfo) {
         // 1.创建支付请求信息
         Integer savePaymentType = paymentInfoDao.savePaymentType(paymentInfo);
@@ -44,7 +44,7 @@ public class PayServiceImpl extends BaseApiService implements PayService {
     }
 
     // 使用支付令牌查找支付信息
-    @RequestMapping("/findPayToken")
+    @Override
     public ResponseBase findPayToken(@RequestParam("payToken") String payToken) {
         // 1.参数验证
         if (StringUtils.isEmpty(payToken)) {
